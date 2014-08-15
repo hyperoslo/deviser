@@ -9,7 +9,7 @@ puts 'Use Ruby (e.g. User.first) in the following prompt:'
 
 loop do
   begin
-    input = Readline.readline('> ', true)
+    input = Readline.readline("\n> ", true)
     $resource = eval(input)
     unless $resource.respond_to? :active_for_authentication?
       raise 'That does not seem like an authenticatable resource :('
