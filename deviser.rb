@@ -31,8 +31,10 @@ end
 session = ActionDispatch::Integration::Session.new(Rails.application)
 session.get('/')
 
-puts
-puts 'Session key:'
-
 key = Rails.configuration.session_options[:key]
+
+puts
+puts "For cookie '#{key}' use the following session key:"
+puts
+
 puts session.cookies[key]
