@@ -4,6 +4,16 @@ require 'readline'
 
 require ::File.expand_path('../config/environment',  __FILE__)
 
+class String
+  def gray
+    "\e[90m#{self}\e[0m"
+  end
+
+  def red
+    "\e[91m#{self}\e[0m"
+  end
+end
+
 puts 'Provide Deviser with an authenticatable resource to impersonate.'
 puts 'Use Ruby (e.g. User.first) in the following prompt:'
 
@@ -16,13 +26,13 @@ loop do
     exit unless input
 
     $resource = eval(input)
-    puts $resource.inspect
+    puts $resource.inspect.gray
     unless $resource.respond_to? :active_for_authentication?
-      raise 'That does not seem like an authenticatable resource :('
+      raise 'That does not seem like an authenticatable resource :('.red
     end
     break
   rescue SyntaxError, StandardError => e
-    puts "#{e.class.name}: #{e.message}"
+    puts "#{e.class.name}: #{e.message}".red
   end
 end
 
