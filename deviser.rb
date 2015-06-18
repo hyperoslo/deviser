@@ -16,6 +16,7 @@ loop do
     exit unless input
 
     $resource = eval(input)
+    puts $resource.inspect
     unless $resource.respond_to? :active_for_authentication?
       raise 'That does not seem like an authenticatable resource :('
     end
