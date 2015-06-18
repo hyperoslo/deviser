@@ -10,6 +10,10 @@ puts 'Use Ruby (e.g. User.first) in the following prompt:'
 loop do
   begin
     input = Readline.readline("\n> ", true)
+
+    # Exit cleanly when ^D is pressed
+    # See: http://ruby-doc.org/stdlib-2.2.2/libdoc/readline/rdoc/Readline.html#method-c-readline
+    exit unless input
     $resource = eval(input)
     unless $resource.respond_to? :active_for_authentication?
       raise 'That does not seem like an authenticatable resource :('
