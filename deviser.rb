@@ -23,7 +23,10 @@ loop do
 
     # Exit cleanly when ^D is pressed
     # See: http://ruby-doc.org/stdlib-2.2.2/libdoc/readline/rdoc/Readline.html#method-c-readline
-    exit unless input
+    unless input
+      puts
+      exit
+    end
 
     $resource = eval(input)
     puts $resource.inspect.gray
