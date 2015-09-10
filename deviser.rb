@@ -53,11 +53,13 @@ loop do
       raise 'That does not seem like an authenticatable resource :('.red
     end
 
+    session_key = cookie
+
     puts
     puts "For cookie '#{key}' use the following session key:"
     puts
 
-    puts cookie
+    puts session_key
     puts
   rescue SyntaxError, StandardError => e
     puts "#{e.class.name}: #{e.message}".red
