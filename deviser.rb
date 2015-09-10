@@ -28,6 +28,7 @@ end
 
 def cookie
   session = ActionDispatch::Integration::Session.new(Rails.application)
+  session.https!
   session.get('/')
   session.cookies[key]
 end
