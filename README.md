@@ -13,7 +13,7 @@ Devise.
 
 Licensed under the **MIT** license, see LICENSE for more information.
 
-![Deviser](http://office.moonsphere.net/deviser.png?v1)
+![Deviser](https://user-images.githubusercontent.com/378235/27263697-1ba9bd94-546f-11e7-87e3-30fc77731a19.png)
 
 ## Requirements
 
